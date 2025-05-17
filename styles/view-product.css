@@ -1,0 +1,269 @@
+/* VIEW PRODUCTS STYLES */
+#view-products-container {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+/* Table Header Section */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+}
+
+/* Search and Filter Styles */
+.search-filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0 6px 6px 0;
+    pointer-events: none;
+}
+
+.search-box input {
+    padding: 10px 50px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: var(--transition);
+    width: 250px;
+    height: 40px;
+    border-right: none;
+}
+
+.search-box input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-dropdown i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+}
+
+.filter-dropdown select {
+    padding: 10px 35px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    appearance: none;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 180px;
+    height: 40px;
+}
+
+.filter-dropdown select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Table Styles */
+#view-products-container .table-container {
+    overflow-x: auto;
+}
+
+#products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#products-table thead th {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: left;
+}
+
+#products-table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+#products-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+#products-table tbody td {
+    padding: 12px 10px;
+    color: #555;
+}
+
+#products-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Status styles */
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    min-width: 90px;
+    text-align: center;
+}
+
+.status.in-stock {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.low-stock {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.out-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Action Buttons - Updated to match Users page */
+.action-btn {
+    padding: 5px 8px;
+    border-radius: 4px;
+    margin: 0 3px;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 16px;
+}
+
+.action-btn.edit {
+    background: #2196F3;
+}
+
+.action-btn.archive {
+    background: #db2c2c;
+}
+
+.action-btn.edit:hover {
+    background: #0b7dda;
+}
+
+.action-btn.archive:hover {
+    background: #a3373b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .search-filter-container {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-box, .filter-dropdown {
+        width: 100%;
+    }
+    
+    .search-box input {
+        width: 100%;
+    }
+    
+    .filter-dropdown select {
+        width: 100%;
+    }
+    
+    #products-table {
+        display: block;
+    }
+    
+    #products-table thead,
+    #products-table tbody,
+    #products-table th,
+    #products-table td,
+    #products-table tr {
+        display: block;
+    }
+    
+    #products-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    #products-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+    }
+    
+    #products-table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    #products-table td:before {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+    }
+    
+    #products-table td:last-child {
+        text-align: left;
+        padding-left: 15px;
+    }
+    
+    #products-table td:last-child:before {
+        display: none;
+    }
+}
